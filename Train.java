@@ -4,8 +4,8 @@ public class Train {
     private final Engine engine;
     private ArrayList<Car> cars;
 
-    public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity) {
-        this.engine = new Engine(fuelType, fuelCapacity);
+    public Train(FuelType f, double maxFuelLevel, int nCars, int passengerCapacity, double currentFuelLevel) {
+        this.engine = new Engine(f, maxFuelLevel, currentFuelLevel);
         this.cars = new ArrayList<>(); 
     }
 
@@ -20,8 +20,8 @@ public class Train {
         return null;
     }
 
-    public int getMaxCapacity() {
-        int MaxCapacity = 0;
+    public int getMaxCapacity(Car c) {
+        
     }
 
 }
