@@ -3,10 +3,10 @@ public class Engine {
     double currentFuelLevel;
     double maxFuelLevel;
 
-    public Engine(double currentFuelLevel, double maxFuelLevel) {
-        this.f = FuelType;
-        this.currentFuelLevel = currentFuelLevel;
+    public Engine(FuelType f, double maxFuelLevel, double currentFuelLevel) {
+        this.f = f;
         this.maxFuelLevel = maxFuelLevel;
+        this.currentFuelLevel = currentFuelLevel;
     }
 
     public double getCurrentFuelLevel() {
@@ -25,11 +25,11 @@ public class Engine {
         //this.maxFuelLevel = maxFuelLevel;
     //}
 
-    public void refuel(double currentFuelLevel) {
+    public void refuel() {
         this.currentFuelLevel = this.maxFuelLevel;
     }
 
-    public void go(double currentFuelLevel) {
+    public void go() {
         if (this.currentFuelLevel > 0) {
             System.out.println("Current fuel level is " + currentFuelLevel);
             currentFuelLevel = currentFuelLevel - 1;
@@ -40,5 +40,21 @@ public class Engine {
         }
     }
 
+    public static void main(String[] args) {
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 100.0);
+        try {
+            while (true) {
+                myEngine.go();
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage()); // Out of fuel
+            myEngine.refuel(); //refueling for next trip
+            System.out.println("Engine refueled to maximum level!"); // refuel successful
+            System.out.println("Current fuel level is " + myEngine.currentFuelLevel);
+        }
+       
+    }
+
 
 }
+
