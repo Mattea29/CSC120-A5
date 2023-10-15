@@ -5,8 +5,12 @@ public class Train {
     private ArrayList<Car> cars;
 
     public Train(FuelType f, double maxFuelLevel, int nCars, int passengerCapacity, double currentFuelLevel) {
-        this.engine = new Engine(f, maxFuelLevel, currentFuelLevel);
-        this.cars = new ArrayList<>(); 
+        this.engine = new Engine(f, maxFuelLevel);
+        this.cars = new ArrayList<>(nCars); 
+
+        for (int i = 0; i < nCars; i++) {
+            cars.add(new Car(passengerCapacity));
+        }
     }
 
     public Engine getEngine() {
@@ -20,8 +24,26 @@ public class Train {
         return null;
     }
 
-    public int getMaxCapacity(Car c) {
-        
+    public int getMaxCapacity() {
+        int maxCapacity = 0;
+        for (Car car : cars) {
+            maxCapacity += car.getCapacity();
+        }
+        return maxCapacity;
     }
 
+    public int seatsRemaining() {
+        int remainingSeats = 0;
+        for (Car car: cars) {
+            remainingSeats += car.seatsRemaining();
+       }
+        return remainingSeats;
+    }
+
+    public void printManifest() {
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println("Car " + (i + 1) + ": ");
+            cars.get(i).printManifest(); 
+        }
+    }
 }
