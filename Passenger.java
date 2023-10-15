@@ -6,11 +6,15 @@ public class Passenger {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void boardCar(Car c) {
         try {
             c.addPassenger(this);
         } catch(Exception e) {
-            System.err.println("Cannot add this passenger");
+            System.err.println("Cannot add this passenger:" + getName());
         }
     }
 

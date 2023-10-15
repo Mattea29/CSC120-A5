@@ -12,57 +12,41 @@ public class Car {
     }
 
     public int getCapacity() {
-        return this.maxCapacity;
+        return maxCapacity;
     }
 
 
     public int seatsRemaining() {
         //maximum number - the total number of people currently onboard
-        return(this.maxCapacity - this.passengersOnboard.size());
+        return(maxCapacity - passengersOnboard.size());
     }
 
     public void addPassenger(Passenger p) {
-        try {
-        if (seatsRemaining() != 0) {
+        if (seatsRemaining() > 0) {
             System.out.println("Seats remaining: " + seatsRemaining());
             System.out.println("Adding passenger " + p);
             passengersOnboard.add(p);
             System.out.println("Current passengers on board: " + passengersOnboard);
-        } 
-        } catch(Exception e) {
-            System.err.println("All seats taken");
-
-        }
+        } else {
+            throw new RuntimeException("No seats left on board.");
+        }     
     }
 
     public void removePassenger(Passenger p) {
-        try {
         if (passengersOnboard.contains(p)) {
-            System.out.println("Removing passenger from train");
+            System.out.println("Removing passenger from train." + p);
             passengersOnboard.remove(p);
             System.out.println("Passengers on board: " + passengersOnboard);
-        }
-        } catch(Exception e) {
-            System.err.println("Passenger not on board and cannot be removed");
+        } else {
+            throw new RuntimeException("Passenger not on board and cannot be removed.");
         }
     }
 
     public void printManifest() {
-        try{
-            if (passengersOnboard.size() != 0) {
+            if (!passengersOnboard.isEmpty()) {
                 System.out.println(passengersOnboard);
-            }
-        } catch (Exception e) {
-            System.out.println("This car is empty");
+            } else {
+                System.out.println("This case is empty.");  
         }
     }
-
-    //public static void main(String[] args) {
-        //Car myCar = new Car(20);
-        //myCar.getCapacity();
-        //myCar.seatsRemaining();
-       // myCar.addPassenger("Jessica");
-
-
-//}
 }
