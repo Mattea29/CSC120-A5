@@ -10,17 +10,27 @@ public class Passenger {
         return name;
     }
 
+    public String toString() {
+        return name;
+    }
+
     public void boardCar(Car c) {
         try {
             c.addPassenger(this);
         } catch(Exception e) {
-            System.err.println("Cannot add this passenger:" + getName());
+            System.err.println("Cannot add " + getName());
         }
     }
 
     
    public void getOffCar(Car c) {
-    c.removePassenger(this);
+    try {
+        c.removePassenger(this);
+        System.out.println(getName() + " has left.");
+    } catch (Exception e) {
+        System.err.println(getName() + " not on board and cannot be removed.");
+    }
+
          
 }
 }
