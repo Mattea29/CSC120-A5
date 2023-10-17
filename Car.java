@@ -47,7 +47,7 @@ public class Car {
 
     public void printManifest() {
             if (!passengersOnboard.isEmpty()) {
-                System.out.println(passengersOnboard);
+                System.out.println("Passengers currently on board: " + passengersOnboard);
             } else {
                 System.out.println("This car is empty.");  
         }
