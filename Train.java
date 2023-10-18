@@ -1,9 +1,20 @@
+/**
+ * the Train class which creates the train and brings all parts together 
+ */
 import java.util.ArrayList;
 
 public class Train {
     private final Engine engine;
     private ArrayList<Car> cars;
 
+    /**
+     * creates new train object using the engine and cars
+     * @param f the fuel type of the engine 
+     * @param maxFuelLevel the maximum fuel level of the train
+     * @param nCars the number of cars on the train
+     * @param passengerCapacity the maximum number of passengers on the train
+     * @param currentFuelLevel the current fuel level of the train
+     */
     public Train(FuelType f, double maxFuelLevel, int nCars, int passengerCapacity, double currentFuelLevel) {
         this.engine = new Engine(f, maxFuelLevel, currentFuelLevel);
         this.cars = new ArrayList<>(nCars); 
@@ -13,10 +24,19 @@ public class Train {
         }
     }
 
+    /**
+     * gets the engine and returns it
+     * @return engine the engine the object
+     */
     public Engine getEngine() {
         return engine;
     }
 
+    /**
+     * gets the car at a certain position
+     * @param i the position of the car in the train
+     * @return null 
+     */
     public Car getCar(int i) {
         if (i >= 0 && i < cars.size()) {
             return cars.get(i);
@@ -24,6 +44,10 @@ public class Train {
         return null;
     }
 
+    /**
+     * gets the maximum capacity of the cars 
+     * @return maxCapacity the maximum capacity of the car
+     */
     public int getMaxCapacity() {
         int maxCapacity = 0;
         for (Car car : cars) {
@@ -32,6 +56,10 @@ public class Train {
         return maxCapacity;
     }
 
+    /**
+     * gets the number of remaining seats in each car
+     * @return remainingSeats the number of seats remaining in each car
+     */
     public int seatsRemaining() {
         int remainingSeats = 0;
         for (Car car: cars) {
@@ -40,6 +68,9 @@ public class Train {
         return remainingSeats;
     }
 
+    /**
+     * prints the roster of passengers in each car
+     */
     public void printManifest() {
         for (int i = 0; i < cars.size(); i++) {
             System.out.println("Car " + (i + 1) + ": ");
