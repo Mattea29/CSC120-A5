@@ -1,5 +1,7 @@
 /**
  * Engine Class which creates engine object, returns current and max fuel levels, refuels, and allows the train to run
+ * @author Mattea Whitlow
+ * @version 11/08/2023
  * 
  */
 public class Engine {

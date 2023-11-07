@@ -1,6 +1,9 @@
 /**
  * Car class which creates new car objects that make up the train. Contains method for checking the capacity, number of seats remaining, checking passengers onboard and adding/removing properly, and printing the current passengers
+ * @author Mattea Whitlow
+ * @version 11/08/2023
  */
+
 
 import java.util.ArrayList;
 

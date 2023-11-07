@@ -1,9 +1,14 @@
 /**
  * Passenger class which creates a new passenger with a name set by the user and contains methods to board the train and get off
+ * @author Mattea Whitlow
+ * @version 11/08/2023
  */
 
 public class Passenger {
     
+    /**
+     * String name is a private attribute representing the name of the passenger object 
+     */
     private String name;
 
     /**

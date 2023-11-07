@@ -1,6 +1,9 @@
 /**
  * the Train class which creates the train and brings all parts together 
+ * @author Mattea Whitlow
+ * @version 11/08/2023
  */
+
 import java.util.ArrayList;
 
 public class Train {
