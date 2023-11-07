@@ -4,6 +4,11 @@
 import java.util.ArrayList;
 
 public class Train {
+
+    /**
+     * final Engine engine is a private attribute representing a non-overridable engine object
+     * ArrayList<Car> cars is a private attribute representing an array list of the cars that make up the train
+     */
     private final Engine engine;
     private ArrayList<Car> cars;
 

@@ -3,6 +3,13 @@
  * 
  */
 public class Engine {
+
+    /**
+     * attributes of Engine class:
+     * FuelType f is a private attribute which allows us to set the fueltype of the train from the options of the FuelType class
+     * double currentFuelLevel is a private attribute which represents the current fuel level of the train. This is used both in constructing a new train, and also in allowing it to go
+     * double maxFuelLevel is a private attribute which represents the maximum fuel level of the train.
+     */
     private FuelType f;
     private double currentFuelLevel;
     private double maxFuelLevel;

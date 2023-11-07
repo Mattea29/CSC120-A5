@@ -8,8 +8,8 @@ public class Car {
 
     /**
      * private attributes:
-     * ArrayList<Passenger> passaengersOnboard is an array list containing the names of passengers to be used by other classes
-     * int maxCapacity is an integer which we use to set the maximum number. This is used to set the sie of the passenger array and to determine the number of seats remaining in a train car.
+     * ArrayList<Passenger> passaengersOnboard is an array list containing the names of passengers
+     * int maxCapacity is an integer which we use to set the maximum number of passengers who can be let onboard and the number of remaining seats
      */
     private ArrayList<Passenger> passengersOnboard;
     private int maxCapacity;
