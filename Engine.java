@@ -4,8 +4,8 @@
  */
 public class Engine {
     private FuelType f;
-    double currentFuelLevel;
-    double maxFuelLevel;
+    private double currentFuelLevel;
+    private double maxFuelLevel;
 
     /**
      * takes in values of fueltype and fuel levels to create a new engine
