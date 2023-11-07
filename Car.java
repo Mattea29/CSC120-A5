@@ -5,6 +5,12 @@
 import java.util.ArrayList;
 
 public class Car {
+
+    /**
+     * private attributes:
+     * ArrayList<Passenger> passaengersOnboard is an array list containing the names of passengers to be used by other classes
+     * int maxCapacity is an integer which we use to set the maximum number. This is used to set the sie of the passenger array and to determine the number of seats remaining in a train car.
+     */
     private ArrayList<Passenger> passengersOnboard;
     private int maxCapacity;
 
